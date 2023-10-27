@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+    <div class="section">
+    <%- include('./partials/nav.ejs') %>
+    <h1>Update Blog</h1>
+
+    
+
+    <div class="box">
+        <form action="/postupdateblog" method="post">
+            <input type="text" name="id" value="<%= result[0].id%>" hidden>
+            <input type="text" required name="title" placeholder="Enter blog title" value="<%= result[0].title%>">
+            <input type="text"required name="author" placeholder="Enter author" value="<%= result[0].author%>">
+            <input type="text"required name="year" placeholder="Enter date published" value="<%= result[0].year%>">
+            <textarea name="blog"required id="" cols="30" rows="10" placeholder="Add here!!!"><%= result[0].author%></textarea>
+        <button type="submit">Submit</button>
+        </form>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+</div>
+</body>
+</html>

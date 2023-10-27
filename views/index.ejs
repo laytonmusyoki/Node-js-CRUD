@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/header.ejs') %>
+<body>
+    <div class="section">
+    <%- include('./partials/nav.ejs') %>
+<h2>Blogs</h2>
+<% if(results.length >0) {%>
+    <% results.forEach(blogs =>{ %>
+
+        <h3><a href="/show/<%=blogs.id %>" style="padding-left: 0;"><%=blogs.title %></a></h3>
+        <p><%=blogs.blog %></p>
+        <%})%>
+
+<%}else{%>
+<p>No blogs yet</p>
+    <%}%>
+
+    <%- include('./partials/footer.ejs') %>
+    </div>
+</body>
+</html>

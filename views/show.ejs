@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/header.ejs') %>
+<body>
+    <div class="section">
+    <%- include('./partials/nav.ejs') %>
+    
+
+<% if(result.length > 0) { %>
+    <% result.forEach(blog => { %>
+
+        <div class="overal">
+            <h2>Specific Blog</h2>
+            <div class="links">
+                <a href="/update/<%= blog.id %>" class="btn">Update</a>
+                <a href="/delete/<%= blog.id %>" class="btn">Delete</a>
+            </div>
+        </div>
+
+
+        <small>Title:</small>
+        <h2 style="color: brown;"><%= blog.title %></h2>
+        <small>Author:</small>
+        <h4><%= blog.author %></h4>
+        <small>blog</small>
+        <p><%= blog.blog %></p>
+        <small>Year published</small>
+        <p><%= blog.year %></p>
+    <% }); %>
+<% } else { %>
+    <p>No blogs yet</p>
+<% } %>
+
+
+
+<%- include('./partials/footer.ejs') %>
+    </div>
+</body>
+</html>
